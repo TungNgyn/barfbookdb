@@ -6,6 +6,7 @@ import UserProfile from "@/pages/UserProfile.vue";
 import TableList from "@/pages/TableList.vue";
 import Typography from "@/pages/Typography.vue";
 import Icons from "@/pages/Icons.vue";
+import Table from "@/pages/Table.vue";
 import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
 
@@ -15,7 +16,7 @@ const routes = [
   {
     path: "/",
     component: session ? DashboardLayout : Login,
-    if (session) {redirect: "/dashboard"},
+    redirect: session ? "/dashboard" : undefined,
     meta: {
       requiredAuth: true,
     },
@@ -31,7 +32,7 @@ const routes = [
         component: UserProfile,
       },
       {
-        path: "table",
+        path: "tablelist",
         name: "Table List",
         component: TableList,
       },
@@ -41,9 +42,9 @@ const routes = [
         component: Typography,
       },
       {
-        path: "icons",
-        name: "Icons",
-        component: Icons,
+        path: "table",
+        name: "Tabelle",
+        component: Table,
       },
       {
         path: "maps",

@@ -1,12 +1,10 @@
 <template>
   <div class="wrapper" :class="{ 'nav-open': $sidebar.showSidebar }">
-    <notifications></notifications>
 
     <side-bar
       :sidebar-item-color="sidebarBackground"
       :sidebar-background-image="sidebarBackgroundImage"
     >
-      <mobile-menu slot="content"></mobile-menu>
       <sidebar-link to="/dashboard">
         <md-icon>dashboard</md-icon>
         <p>Dashboard</p>
@@ -15,7 +13,7 @@
         <md-icon>person</md-icon>
         <p>User Profile</p>
       </sidebar-link>
-      <sidebar-link to="/table">
+      <sidebar-link to="/tablelist">
         <md-icon>content_paste</md-icon>
         <p>Table list</p>
       </sidebar-link>
@@ -23,9 +21,9 @@
         <md-icon>library_books</md-icon>
         <p>Typography</p>
       </sidebar-link>
-      <sidebar-link to="/icons">
+      <sidebar-link to="/table">
         <md-icon>bubble_chart</md-icon>
-        <p>Icons</p>
+        <p>Tabelle</p>
       </sidebar-link>
       <sidebar-link to="/maps">
         <md-icon>location_on</md-icon>
@@ -44,12 +42,6 @@
     <div class="main-panel">
       <top-navbar></top-navbar>
 
-      <fixed-plugin
-        :color.sync="sidebarBackground"
-        :image.sync="sidebarBackgroundImage"
-      >
-      </fixed-plugin>
-
       <dashboard-content> </dashboard-content>
 
       <content-footer v-if="!$route.meta.hideFooter"></content-footer>
@@ -61,21 +53,17 @@
 import TopNavbar from "./TopNavbar.vue";
 import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
-import MobileMenu from "@/pages/Layout/MobileMenu.vue";
-import FixedPlugin from "./Extra/FixedPlugin.vue";
 
 export default {
   components: {
     TopNavbar,
     DashboardContent,
     ContentFooter,
-    MobileMenu,
-    FixedPlugin,
   },
   data() {
     return {
       sidebarBackground: "green",
-      sidebarBackgroundImage: require("@/assets/img/sidebar-2.jpg"),
+      sidebarBackgroundImage: require("@/assets/img/stein-splash.png"),
     };
   },
 };

@@ -13,8 +13,7 @@
       </a>
 
       <a
-        href="https://www.creative-tim.com/product/vue-material-dashboard"
-        target="_blank"
+        href="/"
         class="simple-text logo-normal"
       >
         {{ title }}
@@ -47,15 +46,15 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Vue MD",
+      default: "Barfbook",
     },
     sidebarBackgroundImage: {
       type: String,
-      default: require("@/assets/img/sidebar-2.jpg"),
+      default: require("@/assets/img/stein-splash.png"),
     },
     imgLogo: {
       type: String,
-      default: require("@/assets/img/vue-logo.png"),
+      default: require("@/assets/img/favicon.png"),
     },
     sidebarItemColor: {
       type: String,
