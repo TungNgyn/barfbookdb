@@ -1,31 +1,74 @@
 <template>
     <div>
+      
+      <div class="md-layout-item md-size-30">
+        <md-field>
+          <md-select v-model="table" name="table" id="table">
+            <md-option value="dog">dog</md-option>
+            <md-option value="ingredient">ingredient</md-option>
+            <md-option value="pet">pet</md-option>
+            <md-option value="profile">profile</md-option>
+            <md-option value="profile_liked_recipe">profile_liked_recipe</md-option>
+            <md-option value="recipe">recipe</md-option>
+            <md-option value="recipe_comment">recipe_comment</md-option>
+            <md-option value="recipe_ingredient">recipe_ingredient</md-option>
+            <md-option value="schedule">schedule</md-option>
+          </md-select>
+        </md-field>
+      </div>
+      
+
       <div>Hallo {{ user?.user_metadata["name"] }}</div>
       <div>{{ user?.email }}</div>
       <button id="sign_out" class="mt-4 btn btn-danger" @click="signOut">
         Ausloggen
       </button>
-      <button @click="test">TEST</button>
+      <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
+      >
+        <md-card class="md-card-plain">
+          <md-card-header data-background-color="green">
+            <h4 class="title">dog</h4>
+            <p class="category">Diese Tabelle zeigt die gespeicherten Hunderassen an.</p>
+          </md-card-header>
+          <md-card-content>
+            <dog-table table-header-color="green" v-if="table == 'dog'" ></dog-table>
+            <profile-table table-header-color="green"  v-if="table == 'profile'"></profile-table>
+          </md-card-content>
+        </md-card>
+      </div>
+
     </div>
   </template>
   
   <script>
   import { supabase } from '../components/Supabase';
+
+  import { DogTable } from "@/components";
+  import { ProfileTable } from "@/components";
   
-  export default {
+  export default {    
+    components: {      
+
+      DogTable,
+      ProfileTable,
+    },
     data() {
       return {
-        user: null
+        user: null,
+        dog: null,
+        table: null
       };
     },
     async created() {
-        const { data: { user }, error } = await supabase.auth.getUser();
-  
-        if (error) {
-        console.error(error);
-      } else {
+        const { data: { user }, userError } = await supabase.auth.getUser();  
+         if (userError) console.error(userError);
         this.user = user;
-      }
+      
+        
+        const { data: dog, error: dogError } = await supabase.from('dog').select();
+         if (dogError) console.error(dogError);
+         this.dog = dog;
     },
     methods: {
       async signOut() {
@@ -34,9 +77,6 @@
           console.error(error); // Or you can show an error message on the page
         }
       },
-      async test() {
-        this.$router.push("/test");
-      }
     },
     mounted() {
       supabase.auth.onAuthStateChange((event, session) => {
@@ -50,15 +90,3 @@
   }
   </script>
   
-  <style scoped>
-  #content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border: 1px solid lightgray;
-      padding: 3rem 3rem;
-      border-radius: 5px;
-      background: #fefefe;
-  }
-  </style>

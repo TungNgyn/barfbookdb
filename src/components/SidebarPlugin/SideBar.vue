@@ -5,11 +5,9 @@
     :data-image="sidebarBackgroundImage"
     :style="sidebarStyle"
   >
-    <div class="logo">
-      <a href="#" class="simple-text logo-mini">
-        <div class="logo-img">
-          <img :src="imgLogo" alt="" />
-        </div>
+    <div class="logo" >
+      <a href="#" class="simple-text logo-mini" >
+          <img :src="imgLogo" alt="" style="height: fit-content; width: fit-content;"/>
       </a>
 
       <a

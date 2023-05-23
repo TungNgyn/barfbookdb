@@ -140,4 +140,7 @@
   button.btn-login:active {
     transform: translate(-50%, -1px);
   }
+  .alert {
+    margin-top: 2em;
+  }
   </style>

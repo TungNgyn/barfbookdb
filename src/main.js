@@ -17,6 +17,18 @@ import MaterialDashboard from "./material-dashboard";
 
 import Chartist from "chartist";
 
+import { MdField } from 'vue-material/dist/components'
+
+Vue.use(MdField)
+
+Vue.component('MdSelect', Vue.options.components.MdSelect.extend({
+    methods: {
+        isInvalidValue: function isInvalidValue () {
+            return this.$el.validity ? this.$el.validity.badInput : this.$el.querySelector('input').validity.badInput
+        }
+    }
+}))
+
 // configure router
 const router = new VueRouter({
   routes, // short for routes: routes
