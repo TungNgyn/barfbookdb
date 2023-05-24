@@ -3,12 +3,7 @@ import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 import Login from "@/pages/Login.vue"
 import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
-import TableList from "@/pages/TableList.vue";
-import Typography from "@/pages/Typography.vue";
-import Icons from "@/pages/Icons.vue";
 import Table from "@/pages/Table.vue";
-import Maps from "@/pages/Maps.vue";
-import Notifications from "@/pages/Notifications.vue";
 
 const session = localStorage.getItem('session');
 
@@ -28,41 +23,20 @@ const routes = [
       },
       {
         path: "user",
-        name: "User Profile",
+        name: "Benutzerprofil",
         component: UserProfile,
       },
       {
-        path: "tablelist",
-        name: "Table List",
-        component: TableList,
-      },
-      {
-        path: "typography",
-        name: "Typography",
-        component: Typography,
-      },
-      {
         path: "table",
-        name: "Tabelle",
+        name: "Tabellen",
         component: Table,
       },
       {
-        path: "maps",
-        name: "Maps",
-        meta: {
-          hideFooter: true,
-        },
-        component: Maps,
-      },
-      {
-        path: "notifications",
-        name: "Notifications",
-        component: Notifications,
+        path: "storage",
+        name: "Speicher",
+        component: Storage,
       },
     ],
-    meta: {
-      requiredAuth: true,
-    }
   },
 ];
 

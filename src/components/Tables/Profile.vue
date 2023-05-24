@@ -12,9 +12,9 @@
                 <md-table v-model="profile" :table-header-color="tableHeaderColor" md-fixed-header @md-selected="onSelect">
                 <md-table-row slot="md-table-row" slot-scope="{ item }" md-selectable="single">
                  <md-table-cell md-label="ID">{{ item.id }}</md-table-cell>
-                    <md-table-cell md-label="Erstellt am">{{ item.created_at }}</md-table-cell>
                     <md-table-cell md-label="Name">{{ item.name }}</md-table-cell>
                     <md-table-cell md-label="Beschreibung">{{ item.description }}</md-table-cell>
+                    <md-table-cell md-label="Erstellt am">{{ item.created_at }}</md-table-cell>
                     <md-table-cell md-label="Rang">{{ item.rank }}</md-table-cell>
                 </md-table-row>
             </md-table>

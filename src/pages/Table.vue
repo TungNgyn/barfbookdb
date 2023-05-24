@@ -1,6 +1,5 @@
 <template>
-    <div>
-      
+  <div class="content">
       <div class="md-layout-item md-size-30">
         <md-field>
           <md-select v-model="table" name="table" id="table">
@@ -16,14 +15,6 @@
           </md-select>
         </md-field>
       </div>
-      
-
-      <div>Hallo {{ user?.user_metadata["name"] }}</div>
-      <div>{{ user?.email }}</div>
-      <button id="sign_out" class="mt-4 btn btn-danger" @click="signOut">
-        Ausloggen
-      </button>
-
             <dog-table table-header-color="green" v-if="table == 'dog'" ></dog-table>
             <ingredient-table table-header-color="green"  v-if="table == 'ingredient'"></ingredient-table>
             <pet-table table-header-color="green" v-if="table == 'pet'" ></pet-table>
@@ -71,14 +62,9 @@
       };
     },
     async created() {
-        const { data: { user }, userError } = await supabase.auth.getUser();  
-         if (userError) console.error(userError);
+        const { data: { user }, error } = await supabase.auth.getUser();  
+         if (error) console.error(error);
         this.user = user;
-      
-        
-        const { data: dog, error: dogError } = await supabase.from('dog').select();
-         if (dogError) console.error(dogError);
-         this.dog = dog;
     },
     methods: {
       async signOut() {
