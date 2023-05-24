@@ -18,7 +18,6 @@
       </a>
     </div>
     <div class="sidebar-wrapper">
-      <slot name="content"></slot>
       <md-list class="nav">
         <!--By default vue-router adds an active class to each route link. This way the links are colored when clicked-->
         <slot>

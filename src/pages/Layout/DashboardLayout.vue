@@ -19,10 +19,13 @@
         <md-icon class="fa fa-table"></md-icon>
         <p>Tabelle</p>
       </sidebar-link>
-      <sidebar-link  to="/table" class="active-pro">
-asdasd
+      <sidebar-link to="/storage">
+        <md-icon class="fa fa-table"></md-icon>
+        <p>Speicher</p>
       </sidebar-link>
-      <md-button class="md-round md-danger signOut">Ausloggen</md-button>
+      <div class="signOutWrapper">
+        <md-button class="md-round md-danger signOut">Ausloggen</md-button>
+      </div>
     </side-bar>
 
     <div class="main-panel">
@@ -56,9 +59,11 @@ export default {
 </script>
 
 <style scoped>
-.signOut {
-  width: 75%;
-  margin: auto;
-  bottom: 0;
+.signOutWrapper {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 </style>
