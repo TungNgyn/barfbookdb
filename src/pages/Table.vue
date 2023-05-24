@@ -58,31 +58,13 @@
       return {
         user: null,
         dog: null,
-        table: null,
+        table: "dog",
       };
     },
     async created() {
         const { data: { user }, error } = await supabase.auth.getUser();  
          if (error) console.error(error);
         this.user = user;
-    },
-    methods: {
-      async signOut() {
-        const { error } = await supabase.auth.signOut()
-        if (error) {
-          console.error(error); // Or you can show an error message on the page
-        }
-      },
-    },
-    mounted() {
-      supabase.auth.onAuthStateChange((event, session) => {
-        if (event == "SIGNED_OUT") {
-        //   this.$router.push("/");
-            localStorage.setItem('session', undefined);
-            location.reload();
-        }
-      });
-      
     }
   }
   </script>

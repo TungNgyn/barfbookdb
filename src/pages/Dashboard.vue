@@ -11,19 +11,19 @@
           data-background-color="blue"
         >
           <template slot="content">
-            <h4 class="title">Daily Sales</h4>
+            <h4 class="title">Täglicher Umsatz</h4>
             <p class="category">
               <span class="text-success"
                 ><i class="fas fa-long-arrow-alt-up"></i> 55%
               </span>
-              increase in today sales.
+              erhöhter täglicher Umsatz.
             </p>
           </template>
 
           <template slot="footer">
             <div class="stats">
               <md-icon>access_time</md-icon>
-              updated 4 minutes ago
+              aktualisiert vor 4 Minuten
             </div>
           </template>
         </chart-card>
@@ -39,14 +39,14 @@
           data-background-color="red"
         >
           <template slot="content">
-            <h4 class="title">Email Subscription</h4>
-            <p class="category">Last Campaign Performance</p>
+            <h4 class="title">Benutzeraktivitäten</h4>
+            <p class="category">Monatlich erstellte Inhalte</p>
           </template>
 
           <template slot="footer">
             <div class="stats">
               <md-icon>access_time</md-icon>
-              updated 10 days ago
+              aktualisiert vor 10 Tagen
             </div>
           </template>
         </chart-card>
@@ -61,14 +61,14 @@
           data-background-color="green"
         >
           <template slot="content">
-            <h4 class="title">Completed Tasks</h4>
-            <p class="category">Last Campaign Performance</p>
+            <h4 class="title">Verkehr</h4>
+            <p class="category">Onlinezeiten der Benutzer</p>
           </template>
 
           <template slot="footer">
             <div class="stats">
               <md-icon>access_time</md-icon>
-              campaign sent 26 minutes ago
+              aktualisiert vor 2 Stunden
             </div>
           </template>
         </chart-card>
@@ -82,14 +82,14 @@
           </template>
 
           <template slot="content">
-            <p class="category">Revenue</p>
-            <h3 class="title">$34,245</h3>
+            <p class="category">Umsatz</p>
+            <h3 class="title">34.245€</h3>
           </template>
 
           <template slot="footer">
             <div class="stats">
               <md-icon>date_range</md-icon>
-              Last 24 Hours
+              Letzten 24 Stunden
             </div>
           </template>
         </stats-card>
@@ -103,9 +103,9 @@
           </template>
 
           <template slot="content">
-            <p class="category">Used Space</p>
+            <p class="category">Speicher</p>
             <h3 class="title">
-              49/50
+              486/500
               <small>GB</small>
             </h3>
           </template>
@@ -113,7 +113,7 @@
           <template slot="footer">
             <div class="stats">
               <md-icon class="text-danger">warning</md-icon>
-              <a href="#pablo">Get More Space...</a>
+              Speicherplatz fast voll...
             </div>
           </template>
         </stats-card>
@@ -127,14 +127,14 @@
           </template>
 
           <template slot="content">
-            <p class="category">Fixed Issues</p>
-            <h3 class="title">75</h3>
+            <p class="category">Probleme</p>
+            <h3 class="title">12</h3>
           </template>
 
           <template slot="footer">
             <div class="stats">
               <md-icon>local_offer</md-icon>
-              Tracked from Github
+              Aus dem GitHub-Forum
             </div>
           </template>
         </stats-card>
@@ -148,52 +148,17 @@
           </template>
 
           <template slot="content">
-            <p class="category">Folowers</p>
+            <p class="category">Followers</p>
             <h3 class="title">+245</h3>
           </template>
 
           <template slot="footer">
             <div class="stats">
               <md-icon>update</md-icon>
-              Just Updated
+              Gerade aktualisiert
             </div>
           </template>
         </stats-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
-        <md-card>
-          <md-card-header data-background-color="orange">
-            <h4 class="title">Employees Stats</h4>
-            <p class="category">New employees on 15th September, 2016</p>
-          </md-card-header>
-          <md-card-content>
-            <ordered-table table-header-color="orange"></ordered-table>
-          </md-card-content>
-        </md-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
-        <nav-tabs-card>
-          <template slot="content">
-            <span class="md-nav-tabs-title">Tasks:</span>
-            <md-tabs class="md-success" md-alignment="left">
-              <md-tab id="tab-home" md-label="Bugs" md-icon="bug_report">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-
-              <md-tab id="tab-pages" md-label="Website" md-icon="code">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-
-              <md-tab id="tab-posts" md-label="server" md-icon="cloud">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-            </md-tabs>
-          </template>
-        </nav-tabs-card>
       </div>
     </div>
   </div>
@@ -203,25 +168,19 @@
 import {
   StatsCard,
   ChartCard,
-  NavTabsCard,
-  NavTabsTable,
-  OrderedTable,
 } from "@/components";
 
 export default {
   components: {
     StatsCard,
     ChartCard,
-    NavTabsCard,
-    NavTabsTable,
-    OrderedTable,
   },
   data() {
     return {
       dailySalesChart: {
         data: {
-          labels: ["M", "T", "W", "T", "F", "S", "S"],
-          series: [[12, 17, 7, 17, 23, 18, 38]],
+          labels: ["M", "D", "M", "D", "F", "S", "S"],
+          series: [[12, 14, 11, 17, 23, 18, 38]],
         },
         options: {
           lineSmooth: this.$Chartist.Interpolation.cardinal({
@@ -239,8 +198,8 @@ export default {
       },
       dataCompletedTasksChart: {
         data: {
-          labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
-          series: [[230, 750, 450, 300, 280, 240, 200, 190]],
+          labels: ["0h", "3h", "6h", "9h", "12h", "15h", "18h", "21h"],
+          series: [[87, 13, 59, 121, 182, 294, 242, 150]],
         },
 
         options: {
@@ -248,7 +207,7 @@ export default {
             tension: 0,
           }),
           low: 0,
-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          high: 400, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {
             top: 0,
             right: 0,
@@ -260,21 +219,21 @@ export default {
       emailsSubscriptionChart: {
         data: {
           labels: [
-            "Ja",
-            "Fe",
-            "Ma",
-            "Ap",
-            "Mai",
-            "Ju",
-            "Jul",
-            "Au",
-            "Se",
-            "Oc",
-            "No",
-            "De",
+            "J",
+            "F",
+            "M",
+            "A",
+            "M",
+            "J",
+            "J",
+            "A",
+            "S",
+            "O",
+            "N",
+            "D",
           ],
           series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
+            [523, 592, 627, 780, 694, 881, 1102, 1301, 1029, 890, 756, 895],
           ],
         },
         options: {
@@ -282,7 +241,7 @@ export default {
             showGrid: false,
           },
           low: 0,
-          high: 1000,
+          high: 2000,
           chartPadding: {
             top: 0,
             right: 5,
