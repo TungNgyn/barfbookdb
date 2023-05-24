@@ -4,21 +4,28 @@ import NavTabsCard from "./Cards/NavTabsCard.vue";
 import StatsCard from "./Cards/StatsCard.vue";
 
 // Tables
-import NavTabsTable from "./Tables/NavTabsTable.vue";
-import OrderedTable from "./Tables/OrderedTable.vue";
-import SimpleTable from "./Tables/SimpleTable.vue";
-
-import DogTable from "./Tables/DogTable.vue";
-import ProfileTable from "./Tables/ProfileTable.vue";
+import DogTable from "./Tables/Dog.vue";
+import IngredientTable from "./Tables/Ingredient.vue";
+import PetTable from "./Tables/Pet.vue";
+import ProfileTable from "./Tables/Profile.vue";
+import ProfileLikedRecipeTable from "./Tables/ProfileLikedRecipe.vue";
+import RecipeTable from "./Tables/Recipe.vue";
+import RecipeCommentTable from "./Tables/RecipeComment.vue";
+import RecipeIngredientTable from "./Tables/RecipeIngredient.vue";
+import ScheduleTable from "./Tables/Schedule.vue";
 
 
 export {
   ChartCard,
   NavTabsCard,
   StatsCard,
-  NavTabsTable,
-  OrderedTable,
-  SimpleTable,
   DogTable,
   ProfileTable,
+  IngredientTable,
+  PetTable,
+  ProfileLikedRecipeTable,
+  RecipeTable,
+  RecipeCommentTable,
+  RecipeIngredientTable,
+  ScheduleTable
 };

@@ -23,41 +23,51 @@
       <button id="sign_out" class="mt-4 btn btn-danger" @click="signOut">
         Ausloggen
       </button>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
-      >
-        <md-card class="md-card-plain">
-          <md-card-header data-background-color="green">
-            <h4 class="title">dog</h4>
-            <p class="category">Diese Tabelle zeigt die gespeicherten Hunderassen an.</p>
-          </md-card-header>
-          <md-card-content>
+
             <dog-table table-header-color="green" v-if="table == 'dog'" ></dog-table>
+            <ingredient-table table-header-color="green"  v-if="table == 'ingredient'"></ingredient-table>
+            <pet-table table-header-color="green" v-if="table == 'pet'" ></pet-table>
             <profile-table table-header-color="green"  v-if="table == 'profile'"></profile-table>
-          </md-card-content>
-        </md-card>
+            <profile-liked-recipe-table table-header-color="green" v-if="table == 'profile_liked_recipe'" ></profile-liked-recipe-table>
+            <recipe-table table-header-color="green"  v-if="table == 'recipe'"></recipe-table>
+            <recipe-comment-table table-header-color="green" v-if="table == 'recipe_comment'" ></recipe-comment-table>
+            <recipe-ingredient-table table-header-color="green"  v-if="table == 'recipe_ingredient'"></recipe-ingredient-table>
+            <schedule-table table-header-color="green"  v-if="table == 'schedule'"></schedule-table>
+
       </div>
 
-    </div>
   </template>
   
   <script>
   import { supabase } from '../components/Supabase';
 
   import { DogTable } from "@/components";
+  import { IngredientTable } from "@/components";
+  import { PetTable } from "@/components";
   import { ProfileTable } from "@/components";
+  import { ProfileLikedRecipeTable } from "@/components";
+  import { RecipeTable } from "@/components";
+  import { RecipeCommentTable } from "@/components";
+  import { RecipeIngredientTable } from "@/components";
+  import { ScheduleTable } from "@/components";
   
   export default {    
     components: {      
-
       DogTable,
+      IngredientTable,
+      PetTable,
       ProfileTable,
+      ProfileLikedRecipeTable,
+      RecipeTable,
+      RecipeCommentTable,
+      RecipeIngredientTable,
+      ScheduleTable
     },
     data() {
       return {
         user: null,
         dog: null,
-        table: null
+        table: null,
       };
     },
     async created() {
@@ -85,7 +95,8 @@
             localStorage.setItem('session', undefined);
             location.reload();
         }
-      })
+      });
+      
     }
   }
   </script>
