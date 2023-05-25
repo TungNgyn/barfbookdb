@@ -14,6 +14,9 @@ import RecipeCommentTable from "./Tables/RecipeComment.vue";
 import RecipeIngredientTable from "./Tables/RecipeIngredient.vue";
 import ScheduleTable from "./Tables/Schedule.vue";
 
+// Storages
+import ProfileStorage from "./Storages/Profile.vue";
+
 
 export {
   ChartCard,
@@ -27,5 +30,6 @@ export {
   RecipeTable,
   RecipeCommentTable,
   RecipeIngredientTable,
-  ScheduleTable
+  ScheduleTable,
+  ProfileStorage
 };

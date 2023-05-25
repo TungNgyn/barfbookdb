@@ -64,7 +64,7 @@
     .sidebar-wrapper{
         position: relative;
         height: calc(100vh - 85px);
-        width: 20vw;
+        width: 15vw;
         z-index: 4;
 
         .dropdown .dropdown-backdrop{
@@ -313,7 +313,7 @@
 .main-panel{
     position: relative;
     float: right;
-    width: $sidebar-width;
+    width: 85vw;
     @include transition (0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1));
 
     > .content{

@@ -19,12 +19,12 @@
         <md-icon class="fa fa-table"></md-icon>
         <p>Tabelle</p>
       </sidebar-link>
-      <sidebar-link to="/storage">
+      <!-- <sidebar-link to="/storage">
         <md-icon class="fa fa-table"></md-icon>
         <p>Speicher</p>
-      </sidebar-link>
+      </sidebar-link> -->
       <div class="signOutWrapper">
-        <md-button class="md-round md-danger signOut">Ausloggen</md-button>
+        <md-button class="md-round md-danger signOut" @click="signOut">Ausloggen</md-button>
       </div>
     </side-bar>
 
@@ -42,12 +42,24 @@
 import TopNavbar from "./TopNavbar.vue";
 import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
+import { supabase } from '@/components/Supabase';
 
 export default {
   components: {
     TopNavbar,
     DashboardContent,
     ContentFooter,
+  },
+  methods: {
+    async signOut() {
+      const { error } = await supabase.auth.signOut()
+      if (error) {
+        console.error(error); // Or you can show an error message on the page
+      }
+      localStorage.setItem('session', null);
+      this.$forceUpdate();
+      this.$router.go('/');
+    },
   },
   data() {
     return {

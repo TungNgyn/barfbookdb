@@ -62,7 +62,7 @@
         >
           <template slot="content">
             <h4 class="title">Verkehr</h4>
-            <p class="category">Onlinezeiten der Benutzer</p>
+            <p class="category">Tägliche Onlinezeiten der Benutzer</p>
           </template>
 
           <template slot="footer">
@@ -83,7 +83,7 @@
 
           <template slot="content">
             <p class="category">Umsatz</p>
-            <h3 class="title">34.245€</h3>
+            <h3 class="title">3.245€</h3>
           </template>
 
           <template slot="footer">
@@ -113,7 +113,7 @@
           <template slot="footer">
             <div class="stats">
               <md-icon class="text-danger">warning</md-icon>
-              Speicherplatz fast voll...
+              Speicherplatz fast voll
             </div>
           </template>
         </stats-card>
@@ -134,7 +134,7 @@
           <template slot="footer">
             <div class="stats">
               <md-icon>local_offer</md-icon>
-              Aus dem GitHub-Forum
+              Auf GitHub
             </div>
           </template>
         </stats-card>
@@ -155,7 +155,7 @@
           <template slot="footer">
             <div class="stats">
               <md-icon>update</md-icon>
-              Gerade aktualisiert
+              Kürzlich aktualisiert
             </div>
           </template>
         </stats-card>

@@ -32,6 +32,9 @@ export default {
       if (error) {
         console.error(error); // Or you can show an error message on the page
       }
+      localStorage.setItem('session', null);
+      this.$forceUpdate();
+      this.$router.go('/');
     },
   },
   data() {
